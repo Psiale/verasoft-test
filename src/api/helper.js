@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const getApi = async (endpoint) => {
     const result = await axios.get(endpoint)
