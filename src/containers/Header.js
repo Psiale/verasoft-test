@@ -8,3 +8,5 @@ const Header = () => (
     <p>Hello from Header</p>
     </>
 )
+
+export default Header
