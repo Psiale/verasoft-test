@@ -1,7 +1,7 @@
-import { GET_ORDERS } from "../constants/orders";
+import { GET_USER } from "../constants/user";
 
 const initialState = {
-    id: 12345678,
+    id: 0,
     first_name: '',
     last_name: '',
     gender: '',
@@ -11,9 +11,9 @@ const initialState = {
     work_phone: '',
     email: '',
     activity: {
-      sms: 6,
-      email: 4,
-      orders: 1
+      sms: 0,
+      email: 0,
+      orders: 0
     },
     carrier_status: {
       since: '',
@@ -21,7 +21,7 @@ const initialState = {
     }
 }
 
-const ordersReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
     if (action.type === GET_USER) {
         const {
             id, first_name, gender,
@@ -40,4 +40,4 @@ const ordersReducer = (state = initialState, action) => {
     return state;
 };
 
-export default ordersReducer;
+export default userReducer;

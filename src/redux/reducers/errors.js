@@ -1,15 +1,10 @@
 import SET_ERROR from '../constants/errors';
 
-const initialState = {
-  error: false,
-};
+const initialState = []
 
 const errorReducer = (state = initialState, action) => {
   if (action.type === SET_ERROR) {
-    return {
-      ...state,
-      error: action.error,
-    };
+    return [...state, action.error];
   }
   return state;
 };
