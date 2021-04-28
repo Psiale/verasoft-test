@@ -1,0 +1,15 @@
+.mainContainer {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        .userFavContainer {
+            display: flex;
+        }
+    }
+}
