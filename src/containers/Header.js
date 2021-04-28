@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { connect } from 'react-redux'
 import { loadUser } from '../redux/actions/user'
 import styles from './Header.module.scss'
@@ -17,10 +16,13 @@ const Header = ({loadUser, user}) => {
         <div className = {styles.mainContainer}>
           <div className={styles.headerContainer}>
             <div className={styles.userFavContainer}>
-              <p><FontAwesomeIcon icon={faStar} /></p>
+              <p><FontAwesomeIcon icon={['far', 'star']} /></p>
               <p>{user.first_name} {user.last_name}</p>
             </div>
             <div> <NewOrder /></div>
+          </div>
+          <div>
+            {/* UserInfoContainer */}
           </div>
         </div>
     )
