@@ -1,8 +1,11 @@
-import SET_ERROR from '../constants/errors';
+import { GET_USER, LOAD_USER } from "../constants/user";
 
-const setError = error => ({
-  type: SET_ERROR,
-  error,
+
+export const getUser = user => ({
+    type: GET_USER,
+    user,
 });
 
-export default setError;
+export const loadUser = () => ({
+    type: LOAD_USER,
+})
