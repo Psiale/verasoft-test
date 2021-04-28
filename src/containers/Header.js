@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { loadUser } from '../redux/actions/user'
 import styles from './Header.module.scss'
 import NewOrder from '../components/NewOrder'
+import UserInfoContainer from './UserInfoContainer'
 
 
 const Header = ({loadUser, user}) => {
@@ -22,7 +23,7 @@ const Header = ({loadUser, user}) => {
             <div> <NewOrder /></div>
           </div>
           <div>
-            {/* UserInfoContainer */}
+            <UserInfoContainer user={user} />
           </div>
         </div>
     )
