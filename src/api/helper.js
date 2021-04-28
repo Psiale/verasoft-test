@@ -1,9 +1,14 @@
 import axios from 'axios';
 
-const getApi = async (endpoint) => {
+export const defaultHeaders = () => {
+    axios.defaults.headers.common = {
+        "Access-Control-Allow-Origin": "*",
+        crossorigin:true
+    }
+}
+export const getApi = async (endpoint) => {
+    
     const result = await axios.get(endpoint)
     const data = await result.data
     return data;
 }
-
-export default getApi;

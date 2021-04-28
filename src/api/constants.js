@@ -1,2 +1,2 @@
-export const ORDERS = 'https://pastebin.com/raw/yEk8iLkN'
-export const HEADERS = 'https://pastebin.com/raw/nBWbHBgW'
+export const ORDERS = 'https://nameless-ravine-75353.herokuapp.com/https://pastebin.com/raw/yEk8iLkN'
+export const HEADERS = 'https://nameless-ravine-75353.herokuapp.com/https://pastebin.com/raw/nBWbHBgW'

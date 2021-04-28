@@ -1,4 +1,4 @@
-import GET_ORDERS from "../constants/orders";
+import { GET_ORDERS } from "../constants/orders";
 
 const initialState = {
     orders_A: [],

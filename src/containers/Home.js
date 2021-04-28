@@ -3,12 +3,27 @@
 // <OrderTabs />
 // <Orders />
 
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { loadOrders } from '../redux/actions/orders'
+// import { defaultHeaders } from '../api/helper'
+// import axios from 'axios'
 
-const Home = () => (
-    <>
-    <p>Hello from home</p>
-    </>
-)
+const Home = ({loadOrders}) => {
+    useEffect(() => {
+        // defaultHeaders()
+        // console.log(axios.defaults)
+    });
 
-export default Home;
+    return (
+        <>
+        <button onClick={() => loadOrders()}>Hello from home</button>
+        </>
+    )
+}
+
+const mapDispatchToProps = dispatch => ({
+    loadOrders: () => dispatch(loadOrders())
+})
+
+export default connect(null, mapDispatchToProps)(Home);
