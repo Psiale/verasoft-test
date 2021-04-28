@@ -8,11 +8,10 @@ import setError from '../redux/actions/errors'
 
 function* handleOrdersLoad () {
     try {
-        const orders = yield call(getApi(ORDERS))
+        const orders = yield call(getApi,ORDERS)
         yield put(getOrders(orders))
     } catch (error) {
-        console.log(error)
-        setError(error)
+        yield put(setError(error))
     }
 }
 
