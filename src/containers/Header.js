@@ -17,12 +17,12 @@ const Header = ({loadUser, user}) => {
         <div className = {styles.mainContainer}>
           <div className={styles.headerContainer}>
             <div className={styles.userFavContainer}>
-              <p><FontAwesomeIcon icon={['far', 'star']} /></p>
-              <p>{user.first_name} {user.last_name}</p>
+              <span><FontAwesomeIcon icon={['far', 'star']} /></span>
+              <span>{user.first_name} {user.last_name}</span>
             </div>
-            <div> <NewOrder /></div>
+            <NewOrder />
           </div>
-          <div>
+          <div className={styles.userInfoContainer}>
             <UserInfoContainer user={user} />
           </div>
         </div>

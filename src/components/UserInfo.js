@@ -4,7 +4,7 @@ import getAge from '../helpers'
 import { faMobileAlt, faHome, faAt } from '@fortawesome/free-solid-svg-icons'
 
 const UserInfo = ({user}) => (
-    <div>
+    <>
     <div>
         <FontAwesomeIcon icon={['far', 'user']} />
         <span>{user.gender} {getAge(user.birth_date)}</span>
@@ -33,7 +33,7 @@ const UserInfo = ({user}) => (
           </div>
         </div>
     </div>
-    </div>
+    </>
 );
 
 export default UserInfo;

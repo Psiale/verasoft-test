@@ -3,35 +3,32 @@
 // <OrderTabs />
 // <Orders />
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
+import { defaultHeaders } from "../api/helper";
+import Header from "./Header";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import OrderTabs from "./OrderTabs";
+import styles from "./Home.module.scss";
 
-import { connect } from 'react-redux'
-import { loadOrders } from '../redux/actions/orders'
-import { defaultHeaders } from '../api/helper'
-import Header from './Header'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { far } from '@fortawesome/free-regular-svg-icons'
-import OrderTabs from './OrderTabs'
+library.add(far);
 
-library.add(far)
+const Home = () => {
+  useEffect(() => {
+    defaultHeaders();
+  });
 
-
-const Home = ({loadOrders}) => {
-    useEffect(() => {
-        defaultHeaders()
-    });
-
-    return (
-        <>
-        <button onClick={() => loadOrders()}>Hello from home</button>
-        <Header/>
+  return (
+    <div className={styles.mainContainer}>
+      <div className={styles.headerContainer}>
+        <Header />
+      </div>
+      <div className={styles.OrderTabsContainer}>
         <OrderTabs />
-        </>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-const mapDispatchToProps = dispatch => ({
-    loadOrders: () => dispatch(loadOrders()),
-})
 
-export default connect(null, mapDispatchToProps)(Home);
+export default Home;

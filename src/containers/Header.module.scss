@@ -1,15 +1,34 @@
 .mainContainer {
+    border: 1px violet solid;
     width: 100%;
-    height: 30%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     .headerContainer {
         display: flex;
+        font-size: 25px;
         justify-content: space-between;
         width: 100%;
-        height: 100%;
+        height: 20%;
+        span {
+            margin-left: 10px;
+        }
         .userFavContainer {
             display: flex;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            background-color: khaki;
         }
+        .newOrderContainer {
+
+        }
+    }
+    .userInfoContainer {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        background-color: saddlebrown;
+        
     }
 }
