@@ -4,7 +4,7 @@ import CommunicationActivity from '../components/CommunicationActivity';
 const CommunicationActivites = ({user}) => {
     const {activity, carrier_status} = user
     return (
-        <div>
+        <>
             <div>
                 90-DAY COMMUNICATION ACTIVITY
                 <CommunicationActivity activity={activity.sms} activityText="SMS" />
@@ -15,7 +15,7 @@ const CommunicationActivites = ({user}) => {
             SMS-CARRIER-STATUS
             <CommunicationActivity activity={carrier_status.status} activityText={carrier_status.since} />
             </div>
-        </div>
+        </>
     );
 } 
 

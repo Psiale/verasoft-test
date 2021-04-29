@@ -1,8 +1,15 @@
-.UserInfoContainer {
-    width: 25%;
-}
-
-.CommunicationActivites {
-    height: 100%;
-    width: 75%;
+.mainContainer {
+    div {
+        background-color: #EDF5FF;
+    }
+    display: flex;
+    .UserInfoContainer {
+        width: 40%;
+        display: flex;
+    }
+    
+    .CommunicationActivites {
+        height: 100%;
+        width: 75%;
+    }
 }

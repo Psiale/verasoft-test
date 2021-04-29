@@ -1,0 +1,31 @@
+.mainUserContainer {
+    font-size: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    span {
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 7px
+    };
+}
+.infoContainer {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    div {
+        font-size: 14px;
+        display: flex;
+        height: 100%;
+        /* margin-right: 8px; */
+        align-items: center;
+        span {
+            margin-left: 8px;
+        }
+    }
+}

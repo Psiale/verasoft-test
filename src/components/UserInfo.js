@@ -2,15 +2,15 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import getAge from '../helpers'
 import { faMobileAlt, faHome, faAt } from '@fortawesome/free-solid-svg-icons'
+import styles from './UserInfo.module.scss'
 
 const UserInfo = ({user}) => (
     <>
-    <div>
+    <div className={styles.mainUserContainer}>
         <FontAwesomeIcon icon={['far', 'user']} />
-        <span>{user.gender} {getAge(user.birth_date)}</span>
+        <span>{user.gender} - {getAge(user.birth_date)}</span>
     </div>
-    <div>
-        <div>
+    <div className={styles.infoContainer}>
           <div>
             <FontAwesomeIcon icon={['far','user']} />
             <span>#{user.id}</span>
@@ -32,7 +32,6 @@ const UserInfo = ({user}) => (
             <span>{user.email}</span>
           </div>
         </div>
-    </div>
     </>
 );
 
