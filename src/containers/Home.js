@@ -4,12 +4,19 @@
 // <Orders />
 
 import React, { useEffect } from 'react'
+
 import { connect } from 'react-redux'
 import { loadOrders } from '../redux/actions/orders'
-import { loadUser } from '../redux/actions/user'
 import { defaultHeaders } from '../api/helper'
+import Header from './Header'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import OrderTabs from './OrderTabs'
 
-const Home = ({loadOrders, loadUser}) => {
+library.add(far)
+
+
+const Home = ({loadOrders}) => {
     useEffect(() => {
         defaultHeaders()
     });
@@ -17,14 +24,14 @@ const Home = ({loadOrders, loadUser}) => {
     return (
         <>
         <button onClick={() => loadOrders()}>Hello from home</button>
-        <button onClick={() => loadUser()}> user load</button>
+        <Header/>
+        <OrderTabs />
         </>
     )
 }
 
 const mapDispatchToProps = dispatch => ({
     loadOrders: () => dispatch(loadOrders()),
-    loadUser: () => dispatch(loadUser()),
 })
 
 export default connect(null, mapDispatchToProps)(Home);

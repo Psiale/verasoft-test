@@ -6,7 +6,6 @@ export const defaultHeaders = () => {
 export const getApi = async (endpoint) => {
     
     const result = await axios.get(endpoint)
-    console.log(result)
     const data = await result.data
     return data;
 }
