@@ -1,8 +1,11 @@
 import React from 'react'
 import Chip from '../components/Chip'
+import Ticket from '../components/Ticket';
 
 
-const Order = ({tab}) => (
+const Orders = ({tab}) => {
+  console.log(typeof tab)
+  return (
     <div className="mainContainer">
         <div className="headerContainer">
             <div className="headerOrdersContainer">
@@ -24,16 +27,24 @@ const Order = ({tab}) => (
             </div>
         </div>
         <div className="ticketsContainer">
-            {(tab && tab.length > 0) ? (
-                tab.map(ticket =>
+            {(tab && tab.sent !== undefined) ? (
+                tab.sent.map(ticket =>
                     (
-                        <Ticket date={ticket.sent} />
+                        <Ticket
+                          date={ticket.sent_dt}
+                          time={ticket.sent_tm}
+                          subject={ticket.subject.title}
+                          subEmail={ticket.email}
+                          cmType={ticket.type}
+                          ord_id={ticket.order_id}
+                        />
                     ))
             ) : (
-
+              <p>NO ITEMS</p>
             )}
         </div>
     </div>
 );
-
+}
+export default Orders;
 // I have to connect this to the store

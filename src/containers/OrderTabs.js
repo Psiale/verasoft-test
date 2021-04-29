@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { loadOrders } from '../redux/actions/orders';
 import { connect } from 'react-redux'
 import Tab from '../components/Tab';
+import Orders from './Orders';
 
 const OrderTabs = ({loadOrders, orders}) => {
   const [currentTab, setCurrentTab] = useState('OrdersAAA');
@@ -25,7 +26,8 @@ const OrderTabs = ({loadOrders, orders}) => {
           )
         })}
         {/* I have to put the ordersContainer here */}
-                    <p>holi{console.log(orders[currentTab])}</p>
+        <Orders tab={orders[currentTab]} />
+                    <p>holi</p>
       </div>
     ) : (
       <p>There are no orders on our server</p>
