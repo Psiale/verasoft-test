@@ -11,6 +11,7 @@ import { defaultHeaders } from '../api/helper'
 import Header from './Header'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { far } from '@fortawesome/free-regular-svg-icons'
+import OrderTabs from './OrderTabs'
 
 library.add(far)
 
@@ -24,6 +25,7 @@ const Home = ({loadOrders}) => {
         <>
         <button onClick={() => loadOrders()}>Hello from home</button>
         <Header/>
+        <OrderTabs />
         </>
     )
 }
