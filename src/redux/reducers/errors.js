@@ -4,7 +4,7 @@ const initialState = []
 
 const errorReducer = (state = initialState, action) => {
   if (action.type === SET_ERROR) {
-    return [...state, action.error];
+    return action.error;
   }
   return state;
 };

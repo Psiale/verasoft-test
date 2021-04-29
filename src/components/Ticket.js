@@ -16,6 +16,7 @@ const Ticket = ({date, time, subject, subEmail, cmType, ord_id}) => (
       <div className="orderIdContainer">
         <div>{ord_id}</div>
       </div>
+      <button> RESEND </button>
     </div>
 );
 

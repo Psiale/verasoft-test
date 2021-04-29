@@ -3,22 +3,24 @@ import Chip from '../components/Chip'
 import { connect } from 'react-redux'
 import Ticket from '../components/Ticket';
 import { loadOrders } from '../redux/actions/orders';
+import setError from '../redux/actions/errors';
 
 
-const Orders = ({tab, loadOrders}) => {
-  const handleOnClick = () => {
-    console.log('hello from orders')
+const Orders = ({tab, loadOrders, errors, setError}) => {
+  const handleOnSent = () => {
     loadOrders();
+    setError(false)
   }
-  console.log(typeof tab)
+
+  const handleOnError = () => setError(true);
   return (
     <div className="mainContainer">
         <div className="headerContainer">
             <div className="headerOrdersContainer">
                 <div>
                 <div>
-                    <Chip handleOnClick={handleOnClick} chipText="SENT" />
-                    <Chip chipText="ERRORS" />
+                    <Chip handleOnClick={handleOnSent} chipText="SENT" />
+                    <Chip handleOnClick={handleOnError} chipText="ERRORS" />
                 </div>
                 <div>
                     RECENT ORDERS
@@ -33,7 +35,7 @@ const Orders = ({tab, loadOrders}) => {
             </div>
         </div>
         <div className="ticketsContainer">
-            {(tab && tab.sent !== undefined) ? (
+            {(tab && tab.sent !== undefined && !errors ) ? (
                 tab.sent.map(ticket =>
                     (
                         <Ticket
@@ -55,6 +57,7 @@ const Orders = ({tab, loadOrders}) => {
 
 const mapDispatchToProps = dispatch => ({
   loadOrders: () => dispatch(loadOrders()),
+  setError: error => dispatch(setError(error))
 })
 
 export default connect(null, mapDispatchToProps)(Orders);

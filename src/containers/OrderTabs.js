@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Tab from '../components/Tab';
 import Orders from './Orders';
 
-const OrderTabs = ({loadOrders, orders}) => {
+const OrderTabs = ({loadOrders, orders, errors}) => {
   const [currentTab, setCurrentTab] = useState('OrdersAAA');
   let ordersTexts;
   if (orders && Object.keys(orders).length > 0) ordersTexts = Object.keys(orders);
@@ -25,9 +25,7 @@ const OrderTabs = ({loadOrders, orders}) => {
             </>
           )
         })}
-        {/* I have to put the ordersContainer here */}
-        <Orders tab={orders[currentTab]} />
-                    <p>holi</p>
+        <Orders errors={errors} tab={orders[currentTab]} />
       </div>
     ) : (
       <p>There are no orders on our server</p>
@@ -42,6 +40,7 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   orders: state.orders,
+  errors: state.errors,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(OrderTabs);
