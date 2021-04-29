@@ -1,6 +1,6 @@
 import React from 'react'
 import UserInfo from '../components/UserInfo';
-import CommunicationActivites from './CommunicationActivities';
+import CommunicationActivites from './CommunicationActivites';
 import styles from './UserInfoContainer.module.scss'
 //User Info component
 // CommunicationActivities

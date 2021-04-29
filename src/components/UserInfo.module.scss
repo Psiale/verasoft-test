@@ -1,6 +1,10 @@
+span {
+    color: #333333;
+}
 .mainUserContainer {
     font-size: 90px;
     display: flex;
+    color: white;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -9,12 +13,13 @@
     span {
         text-align: center;
         font-size: 10px;
-        margin-bottom: 7px
+        margin-bottom: 7px;
     };
 }
 .infoContainer {
     width: 75%;
     height: 100%;
+    color: #B0C6D8;
     display: flex;
     flex-direction: column;
 
